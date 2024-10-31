@@ -12,13 +12,10 @@ import pandas as pd
 df = pd.read_csv("oxfordAges.csv", usecols=[2,4])
 df = df.rename(columns={"Age (101 categories) Code":"Age", "Observation":"Number"})
 
-# print(df)
-
 # Add up all the people.
 totalPop = df["Number"].agg(sum)
 
 halfPop = totalPop/2
-# print(halfPop)
 
 # Count each number until you get halfway
 for age in df.values:
